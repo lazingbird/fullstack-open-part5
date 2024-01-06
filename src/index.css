@@ -1,0 +1,15 @@
+h1 {
+  color: blueviolet;
+}
+
+.error {
+  border: medium solid red;
+  padding: 20px;
+  color: red;
+}
+
+.notification {
+  border: medium solid green;
+  padding: 20px;
+  color: green;
+}
