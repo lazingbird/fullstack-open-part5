@@ -8,6 +8,16 @@ const getAll = () => {
   return request.then((response) => response.data);
 };
 
+const updateLikes = async (newObject) => {
+  const response = await axios.put(`${baseUrl}/${newObject.id}`, newObject);
+  return response.data;
+};
+
+const deleteBlog = async (object) => {
+  const config = { headers: { authorization: token } };
+  await axios.delete(`${baseUrl}/${object.id}`, config);
+};
+
 const create = async (newObject) => {
   const config = {
     headers: { authorization: token },
@@ -21,4 +31,4 @@ const setToken = (newToken) => {
   token = `Bearer ${newToken}`;
 };
 
-export default { getAll, setToken, create };
+export default { getAll, setToken, create, updateLikes, deleteBlog };
