@@ -20,13 +20,17 @@ const Blog = ({ blog, updateState, getUser }) => {
     const newBlog = { ...object, likes: updatedLikes };
 
     blogService.updateLikes(newBlog);
-    updateState();
+    if (updateState) {
+      updateState();
+    }
   };
 
   const handleDelete = async (object) => {
     if (window.confirm("Do you wanna really delete this blog entry?")) {
       await blogService.deleteBlog(object);
-      updateState();
+      if (updateState) {
+        updateState();
+      }
     }
   };
 
@@ -38,7 +42,7 @@ const Blog = ({ blog, updateState, getUser }) => {
           {!detailsVisible ? "show" : "hide"}
         </button>
       </p>
-      <div style={showWhenVisible}>
+      <div style={showWhenVisible} className="moreDetails">
         <p>{blog.url}</p>
         <p>
           Likes: {blog.likes}{" "}
