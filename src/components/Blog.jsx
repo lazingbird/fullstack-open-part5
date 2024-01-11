@@ -35,7 +35,7 @@ const Blog = ({ blog, updateState, getUser }) => {
   };
 
   return (
-    <div style={blogStyle}>
+    <div className="blog" style={blogStyle}>
       <p>
         {blog.title}{" "}
         <button onClick={() => setDetailsVisible(!detailsVisible)}>
@@ -51,7 +51,9 @@ const Blog = ({ blog, updateState, getUser }) => {
         <p>Author: {blog.author}</p>
         {getUser().username === blog.user["username"] ? (
           <button onClick={() => handleDelete(blog)}>remove</button>
-        ) : null}
+        ) : (
+          updateState()
+        )}
       </div>
     </div>
   );

@@ -19,17 +19,23 @@ const LoginForm = ({
       <h2>Login</h2>
       <label>
         Username{" "}
-        <input type="text" value={username} onChange={handleUsernameChange} />
+        <input
+          id="username"
+          type="text"
+          value={username}
+          onChange={handleUsernameChange}
+        />
       </label>
       <label>
         Password{" "}
         <input
+          id="password"
           type="password"
           value={password}
           onChange={handlePasswordChange}
         />
       </label>
-      <button>Login</button>
+      <button id="login-button">Login</button>
     </form>
   );
 };

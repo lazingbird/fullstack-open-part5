@@ -11,14 +11,16 @@ const Togglable = (props) => {
     setVisible(!visible);
   };
 
-  Togglable.PropTypes = {
+  Togglable.propTypes = {
     buttonLabel: PropTypes.string.isRequired,
   };
 
   return (
     <div>
       <div style={hideWhenVisible}>
-        <button onClick={toggleVisibility}>{props.buttonLabel}</button>
+        <button id={props.id || "button"} onClick={toggleVisibility}>
+          {props.buttonLabel}
+        </button>
       </div>
       <div style={showWhenVisible}>
         {props.children}

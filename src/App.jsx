@@ -109,7 +109,7 @@ const App = () => {
 
   const blogForm = () => {
     return (
-      <Togglable buttonLabel={"Create New Blog"}>
+      <Togglable id={"create-button"} buttonLabel={"Create New Blog"}>
         <BlogForm createBlog={addBlog}></BlogForm>
       </Togglable>
     );
@@ -160,4 +160,3 @@ const App = () => {
   );
 };
 export default App;
-
